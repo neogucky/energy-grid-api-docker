@@ -30,9 +30,9 @@ RUN npm install deployd-cli -g
 
 
 #install local deployd module
-RUN cd /home/energy-grid-api/
+WORKDIR /home/energy-grid-api/
 RUN npm install deployd
 
 #start deployd
-RUN cd /home/energy-grid-api/netz-daten-strom/
+WORKDIR /home/energy-grid-api/netz-daten-strom/
 RUN dpd
