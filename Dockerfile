@@ -25,10 +25,14 @@ RUN echo "Host bitbucket.org\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 # Clone the conf files into the docker container
 RUN git clone https://github.com/neogucky/energy-grid-api /home/energy-grid-api
 
-#install deployd 
-RUN npm install deployd -g
+#install deployd-cli globaly 
 RUN npm install deployd-cli -g
+
+
+#install local deployd module
+RUN cd /home/energy-grid-api/
+RUN npm install deployd
 
 #start deployd
 RUN cd /home/energy-grid-api/netz-daten-strom/
-#RUN sudo dpd --mongod mongod
+RUN dpd
