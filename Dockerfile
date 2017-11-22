@@ -1,4 +1,4 @@
-FROM nodejs:wheezy
+FROM mkenney/npm:node-7-debian
 
 MAINTAINER Tim Rasim "rasim@imis.uni-luebeck.de"
 
