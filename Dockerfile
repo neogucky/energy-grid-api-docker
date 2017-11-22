@@ -31,4 +31,4 @@ RUN npm install deployd-cli -g
 
 #start deployd
 RUN cd /home/energy-grid-api/netz-daten-strom/
-RUN sudo dpd --mongod mongod
+#RUN sudo dpd --mongod mongod
