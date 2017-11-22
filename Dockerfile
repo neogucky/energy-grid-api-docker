@@ -34,5 +34,6 @@ WORKDIR /home/energy-grid-api/
 RUN npm install deployd
 
 #start deployd
+EXPOSE 2403
 WORKDIR /home/energy-grid-api/netz-daten-strom/
-RUN dpd
+CMD [ "dpd"]
