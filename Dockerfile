@@ -27,6 +27,7 @@ RUN git clone https://github.com/neogucky/energy-grid-api /home/energy-grid-api
 
 #install deployd 
 RUN npm install deployd -g
+RUN npm install deployd-cli -g
 
 #start deployd
 RUN cd /home/energy-grid-api/netz-daten-strom/
