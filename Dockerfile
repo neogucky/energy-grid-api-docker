@@ -33,6 +33,10 @@ RUN npm install deployd-cli -g
 WORKDIR /home/energy-grid-api/
 RUN npm install deployd
 
+#WORKARROUND: create module to copy node_module folder to our project
+dpd create dummy
+cp dummy/node_modules/ netz-daten-strom/node_modules -R
+
 #start deployd
 EXPOSE 2403
 WORKDIR /home/energy-grid-api/netz-daten-strom/
