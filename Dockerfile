@@ -25,19 +25,18 @@ RUN echo "Host bitbucket.org\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 # Clone the conf files into the docker container
 RUN git clone https://github.com/neogucky/energy-grid-api /home/energy-grid-api
 
-#install deployd-cli globaly 
+# Install deployd-cli globaly 
 RUN npm install deployd-cli -g
 
-
-#install local deployd module
+# Install local deployd module
 WORKDIR /home/energy-grid-api/
 RUN npm install deployd
 
-#WORKARROUND: create module to copy node_module folder to our project
-dpd create dummy
-cp dummy/node_modules/ netz-daten-strom/node_modules -R
+# WORKARROUND: create module to copy node_module folder to our project
+RUN dpd create dummy
+RUN cp dummy/node_modules/ netz-daten-strom/node_modules -R
 
-#start deployd
+# Start deployd
 EXPOSE 2403
 WORKDIR /home/energy-grid-api/netz-daten-strom/
 CMD [ "dpd"]
