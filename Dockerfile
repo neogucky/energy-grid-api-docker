@@ -39,4 +39,4 @@ RUN cp dummy/node_modules/ netz-daten-strom/node_modules -R
 # Start deployd
 EXPOSE 2403
 WORKDIR /home/energy-grid-api/netz-daten-strom/
-CMD /bin/bash sh updateAndStart.sh
+CMD /bin/bash updateAndStart.sh
