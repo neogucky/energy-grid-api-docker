@@ -1,2 +1,12 @@
 # energy-grid-api-docker
 Deployd JS architecture for docker 
+
+//This should pull the docker image, start it on port 80
+docker run -dit -p 80:2403 neogucky/energy-grid-api-docker:latest
+
+//Debug: (should start container and then automatically connect to it)
+docker run -it -p 80:2403 neogucky/energy-grid-api-docker:latest
+
+Connect on localhost:
+localhost/alarm.html
+localhost/generator.html
