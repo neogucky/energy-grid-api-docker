@@ -32,6 +32,9 @@ RUN npm install deployd-cli -g
 WORKDIR /home/energy-grid-api/
 RUN npm install deployd
 
+# Prepare mongodb folder
+RUN mkdir -p /data/db
+
 # WORKARROUND: create module to copy node_module folder to our project
 RUN dpd create dummy
 RUN cp dummy/node_modules/ netz-daten-strom/node_modules -R
